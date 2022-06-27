@@ -16,25 +16,31 @@
 
 
 /* Boton de cambio de precios */
-var estado = false 
+var estado = true 
 let accept=document.getElementById("accept");
 accept.addEventListener('change', function(e) {
-   if(estado == false){
-
-        document.getElementById("starterTextPrice").innerHTML = "$79.900";    
-        document.getElementById("starterPrice").innerHTML = "<span>$39.950</span> / mes";   
-    
-        document.getElementById("premiumTextPrice").innerHTML = "$139.900";
-        document.getElementById("premiumPrice").innerHTML = "<span>$69.950</span> / mes";
-        estado = true
-   }else{
-       
+   if(estado == true){
+        // mensual
         document.getElementById("starterTextPrice").innerHTML = "";
-        document.getElementById("starterPrice").innerHTML = "<span>$79.900</span> / mes";  
+        document.getElementById("starterPrice").innerHTML = "<span>$79.900</span> / mes";
+        document.getElementById("startedText-muted").innerHTML = "Facturado mensual";
+
         document.getElementById("premiumTextPrice").innerHTML = "";
         document.getElementById("premiumPrice").innerHTML = "<span>$139.900</span> / mes";
+        document.getElementById("premiumText-muted").innerHTML = "Facturado mensual";       
+        
+        estado = false
+   }else{
+        // Anual
+        document.getElementById("starterTextPrice").innerHTML = "$79.900";    
+        document.getElementById("starterPrice").innerHTML = "<span>$39.950</span> / mes";   
+        document.getElementById("startedText-muted").innerHTML = "Facturado anual";   
 
-        estado=false
+        document.getElementById("premiumTextPrice").innerHTML = "$139.900";
+        document.getElementById("premiumPrice").innerHTML = "<span>$69.950</span> / mes";
+        document.getElementById("premiumText-muted").innerHTML = "Facturado anual";    
+    
+        estado=true
    }
 });
 /* Fin boton cambio de precios */
