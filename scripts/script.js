@@ -43,6 +43,8 @@ accept.addEventListener('change', function(e) {
         estado=true
    }
 });
+
+
 /* Fin boton cambio de precios */
 
 /* Inicio de animaciones Ver Mas - Ver Menos */
